@@ -1,0 +1,129 @@
+@import './../abstracts/_abstracts.scss';
+body {
+  font-family: $fontFamily;
+  font-size: 100%;
+  font-weight: 100;
+  color: $white;
+  line-height: 1.6;
+  background-color: $white;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.btn {
+	color: $secondaryColor;
+	font-size: 14px;
+	background-color: $white;
+  border: 1px solid $secondaryColor;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  outline: none;
+  text-align: center;
+  font-family: $contentfontFamily;
+  font-weight: 300;
+
+
+  &.primary {
+    background-color: #70ac07;
+    color: $white;
+    border: none;
+    margin-top: 2px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    width: 50px;
+    padding: 2px 7px;
+  }
+  &.secondary {
+    background-color: #00c9df;
+    color: $black;
+  }
+  &.tertiary {
+    background-color: $tertiaryColor;
+    color: $white;
+
+  }
+}
+
+.btn:hover {
+	background-color: $darkColor;
+	color: $white;
+}
+
+
+
+button:disabled {
+  background: $gray;
+	border: 2px solid #545E67;
+	color: #545E67;
+}
+
+button[disabled], button[disabled]:hover, button[disabled]:focus, button[disabled]:active {
+  background: $gray;
+  cursor: default;
+}
+
+
+
+.feedback {
+  padding: 5px 10px;
+  border: 1px solid;
+  transition: 5s all linear;
+  opacity: 1;
+
+  &.error {
+    background-color: #FF9494;
+    color: #D8000C;
+    border-color: #D8000C;
+
+  }
+  &.faded {
+    opacity: 0.3;
+  }
+  &.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border-color: #4F8A10;
+  }
+}
+
+a {
+  color: $black90;
+  text-decoration: none;
+}
+
+
+// input placeholders
+::-webkit-input-placeholder, :-moz-placeholder,::-moz-placeholder, :-ms-input-placeholder{
+  color: $black90;
+  font-family: sans-serif;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+
+
+/*
+
+Scroll bars
+
+*/
+::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: $gray;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    background-color: $gray75;
+}
+
+
+

@@ -1,0 +1,52 @@
+@import './../base/_base.scss';
+.search-box {
+    position: relative;
+    float: right;
+    margin-top: 18px;
+    height: 40px;
+
+  $searchWidth: 320px;
+	.search-input {
+    width: $searchWidth;
+    text-indent: 32px;
+    padding: 8px 0px 8px 20px;
+    border: 1px solid $gray;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    outline: none;
+    background-color: $white95;
+    transition: border-color 0.2s ease;
+    transition: background-color 0.2s ease;
+	}
+
+	.search-input:focus,.search-input:active {
+		border-color: $darkGray;
+		background-color: $white;
+	}
+
+	img {
+		width: 25px;
+	    position: absolute;
+	    top: 10px;
+	    left: 15px;
+	}
+  .company-dropdown {
+    width: $searchWidth;
+  }
+  .dropdown {
+    display: none;
+    background-color: $white;
+    padding: 10px 20px 20px ;
+    border: 1px solid $gray;
+    z-index: 1;
+    position: relative;
+  }
+  .dropdown.show {
+    display: block;
+  }
+
+  .dropdown-link {
+    margin-bottom: 15px;
+
+  }
+}

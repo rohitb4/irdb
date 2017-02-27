@@ -1,0 +1,152 @@
+@import './../base/_base.scss';
+
+
+
+.login-container {
+	width: 700px;
+	padding: 20px;
+	margin: 200px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: $white;
+	font-family: "proxima-nova", Arial;
+	font-weight: 100;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 15px;
+		margin-top: 25px;
+		font-size: 40px;
+	}
+	.adobe-logo {
+		display: inline-block;
+		vertical-align: top;
+		width: 120px;
+    	height: 138px;
+    	background-size:contain;
+    	background-repeat: no-repeat;
+	}
+	.connect-buttons {
+		display: inline-block;
+		vertical-align: middle;
+
+	}
+
+	.connect-button {
+		margin-bottom: 20px;
+		padding: 10px 20px;
+		color: white;
+		box-shadow: 0 0 5px $black;
+		&.fb {
+			background-color: #4267b2;
+		}
+		&.gp {
+			background-color: #dc4a38;
+		}
+		&.tw {
+			background-color: #4099ff
+		}
+		&.ln {
+			background-color: #0077b5;
+		}
+	}
+
+	.login-tab img{
+		width: 25px;
+		height: 25px;
+	}
+	.login-tab {
+		margin-right: 10px;
+	}
+
+
+	.gp-icon {
+		display: inline-block;
+		background-color: white;
+		padding: 3px;
+		line-height: 21px;
+		border-radius: 2px;
+	}
+	.gp-icon img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.connect-link {
+		color: white;
+	}
+
+
+}
+
+.buttons-background{
+	z-index: 14;
+	// opacity: 0.7;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+}
+
+.connect-buttons{
+	width: auto;
+}
+
+.buttons{
+	position: relative;
+	z-index: 15;
+	top: 46%;
+	width: 50%;
+	left: calc(50% - 234px);
+	overflow: hidden;
+
+	.connect-button {
+		margin-bottom: 20px;
+		padding: 10px 20px;
+		color: white;
+		border-radius: 20px;
+		display: -webkit-inline-box;
+		margin-right: 10px;
+
+		&.fb {
+			background-color: #4267b2;
+		}
+		&.gp {
+			background-color: #dc4a38;
+		}
+		&.tw {
+			background-color: #4099ff
+		}
+		&.ln {
+			background-color: #0077b5;
+		}
+	}
+
+	.login-tab img{
+		width: 25px;
+		height: 25px;
+	}
+	.login-tab {
+		margin-right: 10px;
+	}
+
+
+	.gp-icon {
+		display: inline-block;
+		background-color: white;
+		padding: 3px;
+		line-height: 21px;
+		border-radius: 2px;
+	}
+	.gp-icon img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.connect-link {
+		color: white;
+	}
+
+}

@@ -1,0 +1,113 @@
+@import './../abstracts/_abstracts.scss';
+
+.header-container {
+	background-color: $headerColor;
+	box-shadow: 0 1px 0 0 rgba(0,0,0,.05),0 2px 4px 0 rgba(0,0,0,.06);
+}
+
+.header {
+	margin: 0 auto;
+  padding: 0px 10px;
+  
+	@include desktop {
+		width: 99%;
+	}
+	div {
+		display: inline-block;
+		vertical-align: bottom;
+		float: left;
+	}
+  .user-icon {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+	.logo-image {
+		width: 225px;
+	}
+  .logout-btn {
+    font-size: 16px;
+
+  }
+  .logout-icon {
+    margin: 5px 5px 0px;
+    cursor: pointer;
+  }
+
+  .home-title {
+    margin-top: 10px;
+
+    a {
+      color: $white;
+    }
+  }
+
+	.right-nav> li {
+		display: inline-block;
+		margin: 10px 0 0 10px;
+		float: right;
+	}
+
+  li.header-text-link {
+    margin-top: 25px;
+  }
+	.header-nav-link {
+		background-color: $white95;
+		border: 1px solid $gray;
+		border-radius: 25px;
+	}
+
+	.header-nav-link img {
+		width: 25px;
+    padding: 8px;
+    cursor: pointer;
+	}
+  .profile-link {
+    padding-bottom: 10px;
+  }
+  .profile-image {
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    color: $primaryColor;
+  }
+  .settings-list {
+     display: none;
+     position: absolute;
+     left: 0;
+     top: 40px;
+     z-index: 1;
+     background-color: $white;
+     border: 1px solid $gray;
+     padding: 10px 20px;
+  }
+  .settings-link {
+    position: relative;
+  }
+
+  .link {
+    cursor: pointer;
+    color: $gray;
+  }
+  .link:hover {
+    color: $black;
+  }
+
+  
+
+  .app-tip {
+    color: $black90;
+
+    &.tooltip-menu {
+      width: 200px;
+    }
+  }
+
+
+	
+}
+
+
+
+
+

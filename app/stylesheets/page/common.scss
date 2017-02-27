@@ -1,0 +1,166 @@
+@import './../abstracts/_abstracts.scss';
+@include desktop {
+	body {
+		height: 100%;
+		background-color: #DCDCDC;
+		overflow-x: hidden;
+	}
+	.body-wrapper {
+		margin: 0 auto;
+	}
+}
+
+@include tablet {
+	.body-wrapper {
+		width: 98%;
+		margin: 0 auto;
+	}
+
+	.page-body {
+		display: inline-block;
+	  width: calc(100% - 260px);
+	  vertical-align: top;
+	  margin-right: 10px;
+	  box-sizing: border-box;
+	}
+}
+
+@include mobile {
+	.body-wrapper {
+		width: 98%;
+		margin: 0 auto;
+	}
+}
+
+
+
+
+
+.panelHeader{
+	background : $accentColor;
+	padding: 8px 12px;
+	color : white;
+}
+
+.modal, .login-modal {
+	display: none;
+	position: fixed;
+	top: 5%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #333;
+	opacity: 0.8;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: 6;
+	height: 100%;
+	.modal-close {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		font-size: 40px;
+		font-weight: 300;
+		cursor: pointer
+	}
+}
+
+.login-modal {
+	height: 45%;
+}
+
+.modal.show, .login-modal {
+	display: block;
+}
+
+.login-modal {
+	background-color: #DCDCDC;
+	opacity: initial;
+}
+
+.main-loader {
+	position: fixed;
+	top: 48%;
+	left: 48%;
+}
+
+.actions-bar {
+	margin-top: 0px;
+	.btn {
+		float: right;
+		margin-left: 10px;
+	}
+}
+
+// .horizontal-divider{
+// 	position: absolute;
+// 	top: 49%;
+// 	width: 100%;
+// 	height: 1%;
+// 	left: 0;
+// 	background-color: #00445A;
+// 	z-index: 8;
+// }
+
+// .login-footer{
+// 	position: absolute;
+// 	top: 97%;
+// 	width: 100%;
+// 	height: 3%;
+// 	background-color: #00445A;
+// 	z-index: 8;
+// 	text-align: center;
+// 	font-size: 13px;
+// }
+
+// .feature{    
+// 	position: absolute;
+// 	top: 49%;
+// 	max-width: 185px;
+// 	max-height: 238px;
+// 	z-index: 6;
+// 	display: block;
+// 	width: auto;
+// 	height: auto;
+// }
+
+// .feature1{
+// 	left: calc(50% - 370px);
+// }
+
+// .feature2{
+// 	left: calc(50% - 185px);
+// 	max-height: 242px;
+// }
+
+// .feature3{
+// 	left: 50%;
+// 	max-height: 241px;
+// }
+
+// .feature4{
+// 	left: calc(50% + 185px);
+// 	max-height: 237px;
+// }
+
+// .feature-desc{
+// 	position: absolute;
+// 	top: 82%;
+// 	color: black;
+// 	font-weight: 500;
+// }
+
+// .feature-desc-1{
+// 	left: calc(50% - 325px);
+// }
+
+// .feature-desc-2{
+// 	left: calc(50% - 192px);
+// }
+// .feature-desc-3{
+// 	left: calc(50% + 75px);
+// }
+
+// .feature-desc-4{
+// 	left: calc(50% + 215px);
+// }

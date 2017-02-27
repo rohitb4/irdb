@@ -1,0 +1,941 @@
+@import './../base/_base.scss';
+@import './../abstracts/_abstracts.scss';
+
+html, body, #app, .main-component, .main-container {
+	height: 100%;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	overflow: hidden;
+}
+.body-wrapper {
+	height: 90%;
+	height: calc(100% - 44px);
+	width: 100%;
+	background-color: #DCDCDC;
+}
+
+option:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+option:nth-child(odd) {
+  background-color: none;
+}
+
+option:hover{
+	background-color: #d0d0d0;
+}
+
+.left-nav  {
+	color: $black90;
+	background-color: $white;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	border-right: 2px solid $headerColor;
+	transition: width 1s linear;
+
+	.left-nav-content {
+		height: 100%;
+		display: inline-block;
+		width: calc(100% - 5px);
+		min-width: 100px;
+
+	}
+	.collapser {
+		display: inline-block;
+		height: 100%;
+		width: 5px;
+		background-color: $black90;
+		cursor: pointer;
+	}
+
+	&.min {
+		width: 10px;
+	}
+}
+
+.home.full {
+	.left-nav {
+		width: 0px;
+	}
+	.Pane1 {
+		width: 10px !important;
+	}
+	.editor-preview {
+		width: calc(100% - 5px);
+		padding-left: 6px;
+	}
+}
+.app-bar {
+	background-color: $white;
+	height: 33px;
+	color: $black90;
+	vertical-align: middle;
+	padding-top: 5px;
+
+	.application-name{
+		font-weight: 400;
+		color: #da471a;
+		font-size: 18px;
+	}
+
+	.actions-bar {
+		float: right;
+		padding-top: 2px;
+		margin-right: 10px;
+		font-size: 13px;
+		font-weight: 500;
+		color: #868686;
+	}
+
+	.delimiter{
+		margin-left: 12px;
+	}
+
+	.cf-icon {
+		margin-left: 10px;
+		cursor: pointer;
+	}
+
+	.cf-icon.share {
+		position: relative;
+		cursor: pointer;
+		margin-left: 12px;
+	}
+
+	.cf-icon.outlook-icon{
+		border: 1px solid transparent;
+		border-radius: 5px;
+	}
+	.selected{
+		opacity: 1.0;
+	}
+	.notselected{
+		opacity: 0.3;
+	}
+	$shareColor: #dcada2;
+	.share-tip {
+		position: absolute;
+		top: 25px;
+		left: -200px;
+		background-color: $gray;
+		font-family: $contentfontFamily;
+		font-weight: normal;
+		border: 1px dashed $shareColor;
+		color: $black90;
+		z-index: $tipIndex;
+		width: 250px;
+		padding: 10px 0px 0px 0px;
+	}
+	.share-tip-arrow {
+		position: absolute;
+		top: -20px;
+		left: 200px;
+		width: 20px;
+		height: 20px;
+		box-sizing: border-box;
+		border: 10px solid transparent;
+		border-bottom: 10px solid $gray;
+	}
+	.tip-content {
+		position: relative;
+		z-index: $tipIndex;
+	}
+	.share-tip-wrap {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: $tipWrapIndex;
+		cursor: default;
+	}
+	.share-info {
+		font-size: 14px;
+		padding: 0px 10px 5px 10px;
+		border-bottom: 1px dashed $shareColor;
+	}
+	.share-link {
+		font-size: 14px;
+		color: $black;
+		font-weight: bold;
+	}
+
+	.thumbs-up {
+		margin-right: 6px;
+	}
+	.share-action {
+		display: inline-block;
+		width: 50%;
+		/*
+		.cf-icon {
+			margin-right: 5px;
+		}*/
+	}
+	.share-actions {
+		padding: 10px;
+		text-align: center;
+	}
+}
+.app-menu {
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	height: 5.5%;
+	background-color: #d3d3d3;
+
+	.triangle{
+		position: absolute;
+		top: 8px;
+		right: 26px;
+		width: 0px;
+		height: 0px;
+		z-index: 100;
+	}
+
+	.triangle:after, .triangle:before{
+		border: solid transparent;
+		content: '';
+		height: 0;
+		left: 100%;
+		position: absolute;
+		width: 0;
+	}
+
+	.triangle:after{
+		border-width: 10px;
+		border-bottom-color: #fff;
+		margin-top: 2px;
+		margin-left: 0.5px;
+	}
+
+	.triangle:before{		
+		border-width: 11px;
+		border-bottom-color: #000;
+	}
+
+	.add-new-app{
+		width: 100%;
+		position: relative;
+		height: 20px;
+		z-index: 60;
+		background-color: #cccccc;
+		margin-top: 0px;
+		.file-add-input{
+			width: calc(100% - 30px);
+		}
+		.cf-icon{
+			// background-color: #;
+		}
+	}
+
+	.tip-container{
+		font-size: 14px;
+		margin-right: 0px;
+
+		.tooltip-menu{
+			width: 170px;
+			top: 28px;
+			right: -60px;
+		}
+	}
+
+	.create-button{
+		float: right;
+		height: 28px;
+		padding-top: 3px;
+		margin-left: 10px;
+		margin-top: 8px;
+		background-color: #008694;
+		color: white;
+		border: 0px;
+	}
+
+	.cancel-button{
+		float: right;
+		height: 27px;
+		padding-top: 3px;
+		margin-left: 10px;
+		margin-right: 7px;
+		margin-top: 8px;
+		border: 0px;
+	}
+
+	.app-control{
+		margin-bottom: 0px;
+		width: 100%;
+	}
+
+	.feedback{
+		font-size: 11px;
+	}
+
+	.app-menu-container{
+		padding-left: 0px;
+		padding-top: 5px;
+		padding-right: 0px;
+		// background-color: #/cccccc;
+
+		.applications{
+			font-weight: 800;
+			padding-left: 15px;
+		}
+	}
+
+	.app-add {
+		vertical-align: middle;
+		position: absolute;
+		top: 11px;
+		background-color: #00c9df;
+		z-index: 6;
+		width: calc(100% - 24px);
+		padding: 5px 5px 10px 5px;
+		left: 12px;
+		color: $black;
+		text-align: left;
+		font-size: 14px;
+		font-weight: 400;
+		margin:0 auto;
+		border: 1px solid #014850;
+	}
+	.application-name{
+		margin-left: 8px;
+	}
+	.show-add-btn {
+		// margin-left: 7px;
+		// margin-right: 7px;
+		cursor: pointer;
+		display: inline-block;
+		background-color: #00c9df;
+		padding: 2px 10px;
+		font-size: 14px;
+		font-weight: 300;
+		color: $black;
+		width: 100%;
+		margin-top: 7px;
+		margin-bottom: 7px;
+		height: 26px;
+	}
+	.show-add-btn:hover{
+		background-color: #68f0ff;
+		font-size: 16px;
+		padding: 0px;
+	}
+	.add-btn {
+		margin-left: 10px;
+		margin-right: 8px;
+		display: inline-block;
+		padding: 3px;
+		float: right;
+		margin-top: 5px;
+		color: $black;
+		font-weight: 300;
+		background-color: #f1ff85;
+	}
+	.app-dd {
+		width: calc(100% - 22px);
+		overflow: hidden;
+		padding: 3px;
+		font-size: 14px;
+		color: #657c88;
+		margin-bottom: 7px;
+
+
+		.list-of-apps{
+			padding: 3px 0px;
+		}
+	}
+	.add-input {
+		font-size: 14px;
+		padding: 2px;
+		display: inline-block;
+		vertical-align: middle;
+		width: 95%;
+		margin-left: 5px;
+	}
+	.create-app-text {
+		font-size: 13px;
+		line-height: 25px;
+	}
+	.cf-icon{
+		margin-top: 6px;
+		padding-left: 7px;
+		cursor: pointer;
+		float: right;
+	}
+}
+.editor-preview {
+	background-color: $white;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(93%);
+	padding: 0px 7px 7px;
+	transition: width 1s linear;
+
+	// .ace-monokai .ace_gutter, .ace-monokai .ace_gutter-active-linesadad {
+	// 	background-color: $themeDark;
+	// 	color: $themeLight;
+	// }
+	// .ace-monokai, .ace-monokai .ace_marker-layer .ace_active-line {
+	// 	background-color: $themeMedium;
+	// 	color: $themeLight;
+
+
+	// }
+	
+
+	&.full {
+		width: calc(100% - 10px);
+	}
+
+	&.column {
+		.code-editor {
+			width: 49%;
+			width: calc(50% - 10px);
+			display: inline-block;
+			height: 103%;
+			margin-right: 8px;
+		}
+
+		.cf-preview{
+			width: 50%;
+			display: inline-block;
+			height: 103%;
+		}
+	}
+
+	&.row {
+		.code-editor, .cf-preview {
+			height: 51%;
+		}
+
+		.code-editor {
+			height: 50%;
+			// height: calc(50% - 10px);
+			margin-bottom: 7px;
+		}
+	}
+
+}
+
+.code-editor {
+	padding: 1px 10px 20px 10px;
+	border: 1px solid #b1b1b1;
+	background-color: #f1efef;
+	#editor {
+		width: 100%;
+		height: 100%;
+		height: calc(100% - 35px);
+		border: 1px solid $white;
+	}
+	#content {
+		display: none;
+	}
+	.save {
+		margin-right: 5px;
+	}
+	.editor-heading{
+		padding:  0px 0px;
+		 h2 {
+			float: left;
+			color: $black90;
+			font-size: 15px;
+			font-weight: 500;
+		}
+
+		.file-name {
+			color: #ff4302;
+			font-weight: 400;
+			font-size: 15px;
+		}
+
+	}
+	.cf-icon, .cf-icon {
+		float: right;
+		margin-right: 10px;
+		cursor: pointer;
+		margin-top: 2px;
+	}
+	
+	.save-feedback {
+		top: 50%;
+		right: 10%;
+		float: right;
+		margin-right: 10px;
+		padding: 0 5px;
+		font-size: 15px;
+	}
+	.run-btn {
+		float: right;
+	}
+}
+
+.cf-navigator {
+	
+	position: relative;
+	height: 100%;
+	padding: 5px 5px 5px 5px;
+	font-weight: normal;
+	font-family: $contentfontFamily;
+
+	.more-icon{
+		margin-top: 5px;
+		padding-right: 10px;
+	}
+
+	.selected-application{
+		background-color: #000000;
+	}
+
+	.create-title{
+		font-size: 16px;
+		margin-top: 40px;
+	}
+
+	.rename-file-container{
+		padding: 5px;
+		background-color: #cccccc;
+	}
+
+	.rename-file-input{
+		margin-left: 10px;
+		position: relative;
+	}
+
+	.add-new-file{
+		position: relative;
+		z-index: 4;
+		width: 100%;
+		background-color: #a4a4a4;
+		padding: 7px 0;
+		margin-top: 4px;
+		cursor: pointer;
+		.file-add-input{
+			
+			background-color: $white;
+			border: 0px;
+			padding: 4px;
+			display: inline-block;
+			vertical-align: top;
+			font-style: italic;
+
+			
+		}
+		.file-add-input:focus{
+			font-style: normal;			
+		}
+		.cf-icon{
+			vertical-align: top;
+			margin-left: 5px;
+			padding-top: 3px;
+		}
+		.close {
+			margin-top: 3px;
+			margin-right: 8px;
+			float: right;
+		}
+		&:first-child {
+			padding-bottom: 0;
+		}
+	}
+	.import{
+		background-color: #e4e6e6;
+		font-weight: 800;
+		/*
+		.cf-icon{
+
+		}
+		.cf-icon:hover{
+			background-color: #b3b3b3;
+		}*/
+	}
+	.import:hover{
+		// background-color: #b3b3b3;
+		color: black;
+	}
+	.export{
+		background-color: #e4e6e6;
+		font-family: $contentfontFamily;
+		font-weight: 800;
+	}
+	.export:hover{
+		color:black;
+	}
+	.nav-header {
+		background-color: $gray;
+		padding: 7px 10px 7px 10px;
+		font-size: 14px;
+		font-weight: bold;
+		border: 1px solid $black30;
+	}
+	.nav-body {
+		padding: 0px;
+		height: 100%;
+		border: 1px solid #b1b1b1;
+		overflow-x: visible;
+		background-color: $white;
+	}
+	.empty-mesg {
+		font-size: 14px;
+		padding-left: 15px;
+		padding-top: 10px;
+	}
+	.export, .import {
+		cursor: pointer;
+	}
+	.add.cf-icon {
+		margin-top: 4px;
+		margin-left: 6px;
+	}
+	.create-pill {
+		padding: 5px 10px;
+		margin-left: 10px;
+		background-color: $white;
+		cursor: pointer;
+		display: inline-block;
+	}
+	.list-item {
+		font-size: 14px;
+		padding-left: 10px;
+	}
+	.list-item.highlight{
+		background-color: #d4d4d7;
+	}
+	.list-item.application:nth-child(even){
+		background-color: #f4f6f7;
+	}
+	.item-content {
+		padding: 5px 0px;
+		display: inline-block;
+		width: 100%;
+	}
+	.item-content .file {
+		margin-left: 20px;
+	}
+	.file-name {
+		cursor: pointer;
+		display: inline-block;
+		width: calc(100% - 80px);
+		word-wrap: break-word;
+	}
+	.file-name.highlight{
+		background-color: yellow;
+	}
+	.file-list-container{
+		border: 0px solid #edf0f2;
+		background-color: #edf0f2;
+		padding: 5px 5px 5px 5px;
+		height: 100%;
+		position: relative;
+		z-index: 0;
+	}
+	.file-list-inner-border{
+		height: 100%;
+		border: 1px solid #b1b1b1;
+		background-color: white;
+		position: relative;
+		z-index: 0;
+	}
+	.file-list {
+		height: 94.5%;
+		overflow: auto;
+		overflow-x: hidden;
+		position: relative;
+		z-index: 0;
+		.expand{
+			margin-left: 5px;
+			margin-top: 6px;
+		}
+		.collapse{
+			margin-left: 3px;
+			margin-top: 6px;
+		}
+		.triangle{
+			position: absolute;
+			top: 8px;
+			right: 19px;
+			width: 0px;
+			height: 0px;
+			z-index: 100;
+		}
+
+		.triangle:after, .triangle:before{
+			border: solid transparent;
+			content: '';
+			height: 0;
+			left: 100%;
+			position: absolute;
+			width: 0;
+		}
+
+		.triangle:after{
+			border-width: 10px;
+			border-bottom-color: #fff;
+			margin-top: 2px;
+			margin-left: 0.5px;
+		}
+
+		.triangle:before{		
+			border-width: 11px;
+			border-bottom-color: #000;
+		}
+	}
+	.nav-body > .file-list {
+		margin-left: 0px;
+	}
+	.nav-footer {
+		position: relative;
+		bottom: 0px;
+		width: 100%;
+		padding: 5px 0px;
+		box-sizing: border-box;
+	}
+	.export-btn {
+		float: right;
+	}
+	.import-btn {
+		float: left;
+	}
+	.file-add-input {
+		width: 70%;
+	}
+	.feedback {
+		font-size: 12px;
+	}
+
+	.import-file-input {
+		height: 0;
+		width: 0;
+		display: none;
+	}
+	.import.cf-icon, .export.cf-icon {
+		margin-right: 5px;
+	}
+	.folder, .file {
+		margin-right: 3px;
+	}
+	.new-file, .new-folder {
+		margin-left: 3px;
+		cursor: pointer;
+	}
+
+}
+
+.cf-preview {
+	color: $black90;
+	padding: 1px 10px 5px 10px;
+	border: 1px solid #b1b1b1;
+	background-color: #f1efef;
+	word-wrap: break-word;
+	
+	.preview-header {
+		padding: 0px;
+		font-weight: 500;
+	}
+	.preview-container {
+		border: 1px solid $gray;
+		background-color: $white;
+		box-shadow: 0 0 3px #d8d8d8;
+		padding: 10px;
+		height: calc(100% - 50px);
+		white-space: pre-wrap;
+		overflow-y: auto;
+	}
+	.preview-engine {
+		float: right;
+		color: #0b5961;
+		font-size: 13px;
+		margin-top: 5px;
+		font-weight: 400;
+	}
+}
+.home {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: white;
+	
+	.nav-split {
+		height: 105% !important;
+		height: 100% !important;
+	}
+	.clone-app {
+		color: $black;
+		width: 500px;
+		padding: 20px;
+		background-color: $white;
+		margin: 120px auto;
+		font-family: $contentfontFamily;
+		font-weight: 300;
+	}
+
+	.clone-text {
+		margin-bottom: 10px;
+	}
+
+	.clone-save {
+		width: 20%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.clone-input {
+		width: 80%;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 8px;
+	}
+
+}
+
+.tip-container {
+	position: relative;
+	margin-right: 7px;
+
+	.tooltip-menu {
+		display: none;
+		top: 28px;
+    	right: -20px;
+		position: absolute;
+		border: 1px solid $gray;
+		padding: 5px;
+		padding-bottom: 0px;
+		z-index: 10;
+		background-color: $white;
+		width: 100px;
+		margin-right: 10px;
+		border: 1px solid gray;
+		border-radius: 2px;
+		-webkit-box-shadow: 9px 3px 32px -7px rgba(0,0,0,0.74);
+		-moz-box-shadow: 9px 3px 32px -7px rgba(0,0,0,0.74);
+		box-shadow: 9px 3px 32px -7px rgba(0,0,0,0.74);
+
+		.tip-item{
+			position: relative;
+			z-index: 15;
+		}
+	}
+
+	.tip-show {
+		display: block;
+	}
+
+	.tip-item {
+		margin-left: 5px;
+		margin-bottom: 6px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+			color: red;
+		}
+	}
+
+
+}
+
+.cf-icon { background: no-repeat top left; width: 20px; height: 20px;  display: inline-block;}
+.cf-icon.add { background-position: 0 0; width: 12px; height: 12px; } 
+.cf-icon.add-app { background-position: 0 -22px; width: 24px; height: 24px; } 
+// .cf-icon.collapse { background-position: 0 -56px; } 
+.cf-icon.delete { background-position: 0 -86px; } 
+.cf-icon.dropdown { background-position: 0 -116px; width: 25px; height: 25px; } 
+// .cf-icon.export { background-position: 0 -151px; } 
+// .cf-icon.expand { background-position: 0 -181px; } 
+.cf-icon.file-yellow { background-position: 0 -211px; } 
+.cf-icon.file { background-position: 0 -241px; } 
+.cf-icon.folder { background-position: 0 -271px; } 
+.cf-icon.folder-yellow { background-position: 0 -301px; } 
+.cf-icon.logout-icon { background-position: 0 -360px; width: 16px; height: 16px; } 
+.cf-icon.import { background-position: 0 -386px; } 
+// .cf-icon.more-icon { background-position: 0 -416px; width: 3px; height: 11px; } 
+.cf-icon.outlook-icon { background-position: 0 -437px; width: 25px; height: 25px; } 
+.cf-icon.save { background-position: 0 -472px; } 
+.cf-icon.share { background-position: 0 -502px; width: 19px; height: 19px; } 
+.cf-icon.thumbs-up { background-position: 0 -531px; width: 22px; height: 22px; } 
+.cf-icon.user-icon { background-position: 0 -563px; width: 15px; height: 15px; } 
+.cf-icon.close { background-position: 0 -617px; width: 16px; height: 16px; } 
+.cf-icon.delete { background-position: 0 -643px; width: 15px; height: 15px; } 
+.cf-icon.more { background-position: 0 -668px; width: 7px; height: 14px; } 
+.cf-icon.drag { background-position: 0 -692px; width: 8px; height: 742px; } 
+// .cf-icon.horizontal-icon { background-position: 0 -1444px; } 
+// .cf-icon.vertical-icon { background-position: 0 -1473px; } 
+.cf-icon.expand { background-position: 0 -1502px; } 
+.cf-icon.collapse { background-position: 0 -1522px;  height: 19px; } 
+.cf-icon.horizontal-icon { background-position: 0 -1542px; width: 25px; } 
+.cf-icon.vertical-icon { background-position: 0 -1571px; width: 25px; } 
+.cf-icon.export { background-position: 0 -1600px; width: 20px; height: 20px; } 
+.cf-icon.more-icon { background-position: 0 -1662px; width: 3px; height: 13px; } 
+// .cf-icon.more-icon { background-position: 0 -1630px; width: 6px; height: 22px; } 
+
+//Need to add width:25px; for horiontal and vertical icon. Gets missed for some reason
+
+
+
+.cf-icon.expand  {
+	width: 18px;
+}
+.download-btn {
+		float: right;
+		cursor: pointer;
+}
+ .Resizer {
+        opacity: .2;
+        z-index: 1;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding;
+        background-clip: padding-box;
+    	// background: linear-gradient(to down, red , yellow); 
+    }
+
+     .Resizer:hover {
+        -webkit-transition: all 2s ease;
+        transition: all 2s ease;
+    }
+
+     .Resizer.horizontal {
+        height: 11px;
+        margin: -5px 0;
+        border-top: 5px solid rgba(255, 255, 255, 0);
+        border-bottom: 5px solid rgba(255, 255, 255, 0);
+        cursor: row-resize;
+        width: 100%;
+    }
+
+    .Resizer.horizontal:hover {
+        border-top: 5px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .Resizer.vertical {
+        width: 11px;
+        margin: 0 -5px;
+
+        border-left: 5px solid rgba(255, 255, 255, 0);
+        border-right: 5px solid rgba(255, 255, 255, 0);
+        cursor: col-resize;
+    }
+
+    .Resizer.vertical:hover {
+        border-left: 5px solid rgba(0, 0, 0, 0.5);
+        border-right: 5px solid rgba(0, 0, 0, 0.5);
+    }
+    .Resizer.disabled {
+      cursor: not-allowed;
+    }
+    .Resizer.disabled:hover {
+      border-color: transparent;
+    }

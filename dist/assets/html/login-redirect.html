@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting..</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var parentOpener = window.opener;
+		if (parentOpener) {
+			parentOpener.postMessage('loggedIn', '*');
+		}
+		window.close();
+	</script>
+
+</body>
+</html>

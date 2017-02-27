@@ -1,0 +1,7 @@
+node_modules
+1_node_modules
+node_modules_2
+npm-debug.log
+dist/**
+!dist/assets/**
+.DS_Store

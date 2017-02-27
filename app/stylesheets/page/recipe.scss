@@ -1,0 +1,120 @@
+@import './../base/_base.scss';
+
+.recipe-main {
+	color: $gray;
+
+	width: 800px;
+	border: 1px solid $primaryColor;
+	margin: 30px auto;
+
+
+	.tab-pill {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 6px 10px;
+		border-right: 1px solid $primaryColor;
+		width: 25%;
+		box-sizing: border-box;
+		background-color: $primaryColor;
+		color: $white;
+		cursor: pointer;
+	}
+
+	.tab-pill.selected {
+		color: $gray;
+		background-color: $white;
+	}
+
+	.tab {
+		padding: 20px;
+		display: none;
+
+		&.show {
+			display: block;
+		}
+	}
+	.field-set {
+		margin-top: 20px;
+	}
+
+	.actions-bar {
+		margin-top: 20px;
+	}
+	.stages {
+		margin-top: 10px;
+		border: 2px solid $black30;
+	}
+
+	.stage-header {
+		background-color: $gray;
+		color: $black;
+		padding: 8px 10px;
+		border-bottom: 2px solid $black30;
+		cursor: pointer;
+	}
+	.stage-body {
+		display: none;
+		padding: 20px;
+
+		&.show {
+			display: block;
+		}
+
+	}
+	.instructions {
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}
+
+.ir-input {
+	width: 50%;
+	border: 1px solid $primaryColor;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: -1px;
+	margin-right: -1px;
+	color: $black90;
+	
+	&.double {
+		width: 100%;
+		margin-right: 2px;
+	}
+	
+
+	&.touched {
+		.ir-label {
+			display: initial;
+		}
+		.ir-input-field {
+			margin-top: 0;
+			font-size: 14px;
+			padding: 4px 8px;
+		}
+	}
+
+	.ir-label {
+		display: none;
+		padding-left: 8px;
+		color: $black90;
+
+		&.show {
+			display: initial;
+		}
+	}
+	.ir-input-field {
+		border: none;
+		font-style: none;
+		font-size: 18px;
+		padding: 14px 10px;
+		display: inline-block;
+		width: 100%;
+		box-sizing: border-box;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
