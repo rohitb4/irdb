@@ -183,6 +183,12 @@ var routes = (
             callback(null, require('./components/pages/recipe/Recipe'));
           })
         }}/>
+        <Route path="ingredient" getComponents={ (nextState, callback)=>{
+  
+          require.ensure([], function (component) {
+            callback(null, require('./components/pages/ingredient/Ingredient'));
+          })
+        }}/>
       
     </Route>
     

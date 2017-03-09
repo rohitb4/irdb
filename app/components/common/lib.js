@@ -1,5 +1,5 @@
 module.exports = {
-	serverUrl: 'http://localhost:8080/',
+	serverUrl: 'http://35.154.91.141:3000/',
 	feedbackDuration: 5000,
 	assetRoot: '/dist/assets/',
 	feedbackMesg: function (comp, type, mesg) {

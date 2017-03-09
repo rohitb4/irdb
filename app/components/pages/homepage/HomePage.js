@@ -22,6 +22,8 @@ var HomeComponent = React.createClass({
 				
 				<div className="login-button"><Link to="/recipe" className="login-button-text">Upload Recipe</Link>
 				</div>
+				<div className="login-button"><Link to="/ingredient" className="login-button-text">Add Ingredient</Link>
+				</div>
 				
 			</div>
 		)
